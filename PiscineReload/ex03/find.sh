@@ -1,2 +1,2 @@
 #/bin/sh
-find . -type file -name '*.sh' -exec basename {} \; | sed "s/.sh$//"
+find . \( -name "*.sh" \) -print | sed 's/\.sh//g' | rev | cut -d "/" -f 1 | rev

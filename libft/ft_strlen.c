@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 17:23:47 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/07 16:24:30 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/04 21:25:16 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/04 21:29:42 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_strlen(char *str)
 {
-	int				i;
-	unsigned int	res;
+	int i;
 
-	if (nb < 0 || nb > 12)
-		return (0);
-	i = 2;
-	res = 1;
-	while (i <= nb)
+	i = 0;
+	while (str[i])
 	{
-		res *= i;
-		++i;
+		i++;
 	}
-	return (res);
+	return (i);
 }
