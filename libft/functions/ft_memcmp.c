@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:25:16 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 11:28:09 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/10 11:15:16 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/10 11:25:01 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	int i;
+	unsigned char	*s1;
+	unsigned char	*s2;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
+	s1 = (unsigned char*)str1;
+	s2 = (unsigned char*)str2;
+	while ((s1[i] == s2[i]) && (i + 1 < n))
 	{
 		i++;
 	}
-	return (i);
+	return (s1[i] - s2[i]);
 }

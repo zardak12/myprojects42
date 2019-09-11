@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:25:16 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 11:28:09 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/10 12:34:38 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/10 12:45:52 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+char	*ft_strcat(char *dst, const char *src)
 {
-	int i;
+	char *first;
+	const char *second;
+	size_t i;
+	size_t j;
 
+	first = dst;
+	second = src;
 	i = 0;
-	while (str[i])
-	{
+	j = 0;
+	while (first[i])
 		i++;
+	while (second[j])
+	{
+		first[i] = second[j];
+		i++;
+		j++;
 	}
-	return (i);
+	first[i] = '\0';
+	return (first);
 }

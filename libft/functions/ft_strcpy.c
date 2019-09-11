@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:25:16 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 11:28:09 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/10 11:31:57 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/10 12:09:11 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+char	*ft_strcpy(char *dest, const char *s)
 {
-	int i;
+	char *first;
+	const char *second;
 
-	i = 0;
-	while (str[i])
+	first = dest;
+	second = s;
+	while (*second)
 	{
-		i++;
+		*first = *second;
+		first++;
+		second++;
 	}
-	return (i);
+	return (first);
 }

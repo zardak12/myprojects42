@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:25:16 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 11:28:09 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/11 16:15:32 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/11 16:16:55 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	const char *need;
 
-	i = 0;
-	while (str[i])
+	need = s;
+	while (*need)
 	{
-		i++;
+		if (*need == c)
+			return ((char*)need);
+		need++;
 	}
-	return (i);
+	if (c == '\0')
+	{
+		return ((char*)need);
+	}
+	return (NULL);
 }
