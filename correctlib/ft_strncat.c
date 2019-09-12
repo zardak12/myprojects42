@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 12:55:25 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 13:03:56 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:06:37 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strncat(char *dst, const char *src, size_t len)
 {
-	char *first;
-	const char *second;
-	size_t i;
-	size_t j;
+	char		*first;
+	const char	*second;
+	size_t		i;
+	size_t		j;
 
 	first = dst;
 	second = src;

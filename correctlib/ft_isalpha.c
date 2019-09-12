@@ -6,13 +6,13 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 16:49:47 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/11 16:49:56 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 19:38:21 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_isalpha(int c)
 {
-	return (c >= 32 && c <= 126);
+	return ((c >= 'a' && c <= 'z') || (c >= 65 && c <= 90));
 }

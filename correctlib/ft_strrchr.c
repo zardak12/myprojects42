@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 16:17:12 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/11 16:18:29 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:13:23 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*need;
-	char	*value;
+	char		*value;
 
 	value = (0);
 	need = s;

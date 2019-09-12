@@ -6,14 +6,14 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 16:45:41 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/07 16:47:00 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 20:48:16 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar(const char c)
+void	ft_putchar( char c)
 {
 	write(1, &c, 1);
 }

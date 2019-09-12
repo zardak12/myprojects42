@@ -6,13 +6,13 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 16:45:57 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/11 16:46:19 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 19:23:38 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+int			ft_isalnum(int c)
 {
-	return (c >= 97 && c <= 122);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 17:26:31 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/09 18:31:41 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:40:00 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	*ft_memmove(void *str1, const void *str2, size_t len)
 			*first++ = *second++;
 		}
 	}
-	return (first);
+	return (str1);
 }

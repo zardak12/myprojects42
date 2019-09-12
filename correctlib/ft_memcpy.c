@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 15:29:10 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/08 16:14:39 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/12 18:40:46 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	first = (unsigned char*)dst;
 	second = (unsigned char*)src;
-	if (n == 0)
-		return (dst);
 	while (n)
 	{
 		*first = *second;
@@ -28,5 +26,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		second++;
 		n--;
 	}
-	return (first);
+	return (dst);
 }
