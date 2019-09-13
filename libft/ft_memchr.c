@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 12:34:38 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 12:45:52 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/09 18:59:04 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/13 19:00:34 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dst, const char *src)
-{
-	char *first;
-	const char *second;
-	size_t i;
-	size_t j;
+#include "libft.h"
 
-	first = dst;
-	second = src;
-	i = 0;
-	j = 0;
-	while (first[i])
-		i++;
-	while (second[j])
+void	*ft_memchr(const void *s, int c, size_t len)
+{
+	unsigned char *first;
+	unsigned char second;
+
+	first = (unsigned char*)s;
+	second = (unsigned char)c;
+	while (len--)
 	{
-		first[i] = second[j];
-		i++;
-		j++;
+		if (*first == second)
+			return (first);
+		first++;
 	}
-	first[i] = '\0';
-	return (first);
+	return (NULL);
 }

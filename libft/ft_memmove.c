@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 16:51:39 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/11 16:51:58 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/08 17:26:31 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/13 20:14:21 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	*ft_memmove(void *str1, const void *str2, size_t len)
 {
-	if (ft_isupper(c))
-		return (c + 32);
-	return (c);
+	unsigned char *first;
+	unsigned char *second;
+
+	first = (unsigned char*)str1;
+	second = (unsigned char*)str2;
+	if (str1 > str2)
+	{
+		while (len)
+		{
+			first[len] = second[len];
+			len--;
+		}
+	}
+	if (str1 < str2)
+	{
+		while (len--)
+			*first++ == *second++;
+	}
+	return (str1);
 }
