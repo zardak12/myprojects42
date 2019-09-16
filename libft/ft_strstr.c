@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:17:53 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/15 17:40:23 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/16 16:15:49 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/16 18:47:17 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *str)
+char	*ft_strstr(const char *hay, const char *need)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
-	while (str[i])
+	if (need == '\0')
+		return ((char*)hay);
+	while (*hay)
 	{
-		ft_putchar(str[i]);
-		i++;
+		while (hay[i] && (hay[i] == need[i]))
+		{
+			if (hay[i] == '\0')
+				return ((char*)hay);
+			i++;
+		}
+		hay++;
 	}
+	return (NULL);
 }
