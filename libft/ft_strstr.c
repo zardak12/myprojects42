@@ -14,20 +14,26 @@
 
 char	*ft_strstr(const char *hay, const char *need)
 {
-	size_t i;
+	unsigned int i;
+	unsigned int j;
 
+	j = 0;
 	i = 0;
-	if (need == '\0')
+	if (*need == '\0')
 		return ((char*)hay);
 	while (*hay)
 	{
-		while (hay[i] && (hay[i] == need[i]))
+		if (*hay == need[0])
 		{
-			if (hay[i] == '\0')
-				return ((char*)hay);
-			i++;
+			i = 1;
+			while (need[i] && *(hay + i)  == need[i])
+			{
+				i++;
+			}
+			if (need[i] == '\0')
+				return((char*)hay);
 		}
 		hay++;
 	}
-	return (NULL);
+	return (0);
 }

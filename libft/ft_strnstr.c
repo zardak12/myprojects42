@@ -15,18 +15,23 @@
 char	*ft_strnstr(const char *hay, const char *need, size_t len)
 {
 	size_t i;
+	size_t n;
 
+	n = 0;
 	i = 0;
 	if (need == '\0')
 		return ((char*)hay);
-	while ((len--) && (hay[i]) && (need[i]))
+	 while (hay[n] && n < len)
 	{
-		if (hay[i] == need[i])
-			i++;
-		else
-			return (NULL);
+		if (hay[n] == need[0])
+		{
+			i = 1;
+			while ((need[i]) && (n + i < len)  && (hay[n + i] == need[i]))
+				i++;
+			if (need[i] == '\0')
+				return ((char*)&hay[n]);
+		}
+		n++;
 	}
-	if (hay == need)
-		return ((char*)hay);
-	return (NULL);
+	return (0);
 }

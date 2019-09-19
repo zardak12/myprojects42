@@ -15,7 +15,21 @@
 
 # include <unistd.h>
 # include <string.h>
+# include <stdlib.h>
 
+char * ft_strmap(char const *s, char (*f)(char));
+char * ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int	ft_strequ(char const *s1, char const *s2);
+int	ft_strnequ(char const *s1, char const *s2, size_t n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_strclr(char *s);
+char    *ft_strnew(size_t size);
+char    *ft_strsub(char const *s, unsigned int str, size_t len);
+int	ft_atoi(const char *str);
+void    ft_strdel(char  **as);
+void    ft_memdel(void **ap);
+void *ft_memalloc(size_t size);
 char    *ft_strnstr(const char *hay, const char *need, size_t len);
 char    *ft_strstr(const char *hay, const char *need);
 void	ft_putnbr_fd(int n, int fd);
