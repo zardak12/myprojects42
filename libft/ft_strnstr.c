@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 17:08:40 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/16 18:06:35 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/20 17:24:19 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 	size_t n;
 
 	n = 0;
-	i = 0;
-	if (need == '\0')
+	if (*need == '\0' || need == NULL)
 		return ((char*)hay);
-	 while (hay[n] && n < len)
+	while (hay[n] != '\0' && n < len)
 	{
-		if (hay[n] == need[0])
+		i = 0;
+		while (need[i] == hay[n + i] && n + i < len)
 		{
-			i = 1;
-			while ((need[i]) && (n + i < len)  && (hay[n + i] == need[i]))
-				i++;
-			if (need[i] == '\0')
-				return ((char*)&hay[n]);
+			if (need[i + 1] == '\0')
+			{
+				return ((char*)hay + n);
+			}
+			i++;
 		}
 		n++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 16:15:49 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/20 15:54:25 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/20 19:00:29 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/20 19:20:44 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *hay, const char *need)
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	char			*first;
+	char			*second;
+	char			*memmory;
 
-	j = 0;
 	i = 0;
-	if (*need == '\0')
-		return ((char*)hay);
-	while (*hay)
+	memmory = ft_memalloc((size_t)ft_strlen((char*)s) + 1);
+	if (*s == '\0' || memmory == NULL)
+		return (NULL);
+	first = (char*)s;
+	second = memmory;
+	while (first[i])
 	{
-		if (*hay == need[0])
-		{
-			i = 1;
-			while (need[i] && *(hay + i) == need[i])
-			{
-				i++;
-			}
-			if (need[i] == '\0')
-				return ((char*)hay);
-		}
-		hay++;
+		second[i] = f(i, first[i]);
+		i++;
 	}
-	return (0);
+	return (second);
 }

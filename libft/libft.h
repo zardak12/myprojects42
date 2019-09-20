@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 18:05:25 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/16 18:06:03 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/20 20:12:26 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <string.h>
 # include <stdlib.h>
 
+char    *ft_strjoin(char const *s1, char const *s2);
 char * ft_strmap(char const *s, char (*f)(char));
-char * ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int	ft_strequ(char const *s1, char const *s2);
 int	ft_strnequ(char const *s1, char const *s2, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
