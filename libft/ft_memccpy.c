@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/08 16:19:50 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/13 16:39:08 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/22 19:27:02 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memccpy(void *destination, const void *source, int c, size_t n)
 
 	first = (unsigned char*)destination;
 	second = (unsigned char*)source;
-	if ((destination = NULL) || (source == NULL))
+	if ((destination = NULL) && (source == NULL))
 		return (0);
 	while (n)
 	{

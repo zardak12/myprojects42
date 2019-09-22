@@ -6,14 +6,13 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 19:18:07 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/10 11:29:36 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/22 17:00:18 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(char *src)
 {
 	char	*new;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 18:05:25 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/20 20:12:26 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/22 18:03:37 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,25 @@
 # include <string.h>
 # include <stdlib.h>
 
-char    *ft_strjoin(char const *s1, char const *s2);
-char * ft_strmap(char const *s, char (*f)(char));
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int	ft_strequ(char const *s1, char const *s2);
-int	ft_strnequ(char const *s1, char const *s2, size_t n);
+char	**ft_strsplit(const char *str, char c);
+char	*ft_itoa(int n);
+char	*ft_strtrim(char const *s);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_strclr(char *s);
-char    *ft_strnew(size_t size);
-char    *ft_strsub(char const *s, unsigned int str, size_t len);
-int	ft_atoi(const char *str);
-void    ft_strdel(char  **as);
-void    ft_memdel(void **ap);
-void *ft_memalloc(size_t size);
-char    *ft_strnstr(const char *hay, const char *need, size_t len);
-char    *ft_strstr(const char *hay, const char *need);
+char	*ft_strnew(size_t size);
+char	*ft_strsub(char const *s, unsigned int str, size_t len);
+int		ft_atoi(const char *str);
+void	ft_strdel(char **as);
+void	ft_memdel(void **ap);
+void	*ft_memalloc(size_t size);
+char	*ft_strnstr(const char *hay, const char *need, size_t len);
+char	*ft_strstr(const char *hay, const char *need);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putendl(char const *s);

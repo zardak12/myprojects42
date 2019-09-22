@@ -6,7 +6,7 @@
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 20:02:18 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/20 20:13:09 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/09/22 19:47:40 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*result;
-	size_t	memmory;
+	size_t	len;
+	char	*out;
 
+	out = NULL;
 	if (s1 && s2)
-		memmory = (size_t)(ft_strlen(((char*)s1) + ft_strlen((char*)s2)));
-	if (s1)
-		memmory = (size_t)(ft_strlen((char*)s1));
-	if (s2)
-		memmory = (size_t)(ft_strlen((char*)s2));
-	else
-		return (NULL);
-	result = ft_memalloc(memmory);
-	if (result == NULL)
-		return (NULL);
-	if (s1)
-		result = ft_strcpy(result, (char*)s1);
-	else
-		result = ft_strcpy(result, (char*)s2);
-	if (s1 && s2)
-		result = ft_strcat(result, (char*)s2);
-	return (result);
+	{
+		len = ft_strlen(s1) + ft_strlen(s2);
+		out = (char *)malloc(sizeof(char) * (len + 1));
+		if (out)
+		{
+			ft_strcpy(out, s1);
+			ft_strcat(out, s2);
+		}
+	}
+	return (out);
 }
