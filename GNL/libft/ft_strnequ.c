@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/20 16:05:36 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/20 16:05:45 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	return (0);
 }

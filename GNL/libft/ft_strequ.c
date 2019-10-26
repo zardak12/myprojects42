@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/20 16:02:39 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/20 16:03:08 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	if (as)
+	unsigned int	i;
+
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strlen((char*)s1) != ft_strlen((char*)s2))
+		return (0);
+	while (s1[i] && s2[i])
 	{
-		free(*as);
-		*as = NULL;
+		if (s1[i] != s2[i])
+			return (0);
+		++i;
 	}
+	return (1);
 }

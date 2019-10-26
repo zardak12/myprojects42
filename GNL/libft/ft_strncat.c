@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   strncat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/10 12:55:25 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/12 18:06:37 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strncat(char *dst, const char *src, size_t len)
 {
-	if (as)
+	char		*first;
+	const char	*second;
+	size_t		i;
+	size_t		j;
+
+	first = dst;
+	second = src;
+	i = 0;
+	j = 0;
+	while (first[i])
+		i++;
+	while ((second[j]) && (j < len))
 	{
-		free(*as);
-		*as = NULL;
+		first[i] = second[j];
+		i++;
+		j++;
 	}
+	first[i] = '\0';
+	return (first);
 }

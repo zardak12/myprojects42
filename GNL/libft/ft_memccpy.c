@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   memccpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/08 16:19:50 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/22 19:27:02 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	*ft_memccpy(void *destination, const void *source, int c, size_t n)
 {
-	if (as)
+	unsigned char	*first;
+	unsigned char	*second;
+
+	first = (unsigned char*)destination;
+	second = (unsigned char*)source;
+	if ((destination = NULL) && (source == NULL))
+		return (0);
+	while (n)
 	{
-		free(*as);
-		*as = NULL;
+		*first = *second;
+		if (*first == (unsigned char)c)
+			return (first + 1);
+		first++;
+		second++;
+		n--;
 	}
+	return (NULL);
 }

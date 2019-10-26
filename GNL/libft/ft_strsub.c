@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/20 16:03:23 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/20 16:03:30 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strsub(char const *s, unsigned int str, size_t len)
 {
-	if (as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	char			*real;
+
+	if (!s || !(real = ft_memalloc(len + 1)))
+		return (NULL);
+	real = ft_strncpy(real, (char*)s + str, len);
+	return (real);
 }

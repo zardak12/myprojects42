@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/20 20:02:18 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/22 19:47:40 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (as)
+	size_t	len;
+	char	*out;
+
+	out = NULL;
+	if (s1 && s2)
 	{
-		free(*as);
-		*as = NULL;
+		len = ft_strlen(s1) + ft_strlen(s2);
+		out = (char *)malloc(sizeof(char) * (len + 1));
+		if (out)
+		{
+			ft_strcpy(out, s1);
+			ft_strcat(out, s2);
+		}
 	}
+	return (out);
 }

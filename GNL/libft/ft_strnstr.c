@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kosgrey <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 16:04:44 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/09/22 20:29:19 by kosgrey          ###   ########.fr       */
+/*   Created: 2019/09/16 17:08:40 by kosgrey           #+#    #+#             */
+/*   Updated: 2019/09/20 17:24:19 by kosgrey          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strnstr(const char *hay, const char *need, size_t len)
 {
-	if (as)
+	size_t i;
+	size_t n;
+
+	n = 0;
+	if (*need == '\0' || need == NULL)
+		return ((char*)hay);
+	while (hay[n] != '\0' && n < len)
 	{
-		free(*as);
-		*as = NULL;
+		i = 0;
+		while (need[i] == hay[n + i] && n + i < len)
+		{
+			if (need[i + 1] == '\0')
+			{
+				return ((char*)hay + n);
+			}
+			i++;
+		}
+		n++;
 	}
+	return (NULL);
 }
