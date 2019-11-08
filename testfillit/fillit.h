@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kosgrey <kosgrey@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mark <mark@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:13:03 by kosgrey           #+#    #+#             */
-/*   Updated: 2019/10/28 19:15:03 by kosgrey          ###   ########.fr       */
+/*   Updated: 2019/11/03 03:25:51 by mark             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 #define FILLIT_H
 
 # include "libft/libft.h"
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-# include <fcntl.h>
+# include <fcntl.h> 
 # include "libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
+
 #define BUFF_SIZE 21
-typedef struct s_list
+
+typedef struct  my_coordinate_of_tetramino
 {
     int x;
     int y;
-    int length;
-    struct s_list *next;
-}               t_list;
+}               My_cot;
 
+typedef struct s_value_teramino
+{
+    int len;
+    My_cot    coord[4];
+    struct s_value_teramino *next;
+}               t_v_t;
+
+int tetramino;
+t_v_t *list;
 #endif
